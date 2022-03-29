@@ -1,0 +1,38 @@
+
+
+
+FUNCTION Ins_Sort(arr:ARRAY_OF INTEGER,n:INTEGER):INTEGER_OF INTEGER
+VAR
+
+    i,key,j:INTEGER;
+BEGIN
+    FOR i FROM 1 TO n STEP 1  DO 
+        key := arr[i];
+        j:=i-1;
+    END_FOR
+    WHILE (j >= 0 && arr[j] > key) DO
+
+        arr[j + 1] := arr[j];
+        j := j - 1;
+    END_WHILE
+    RETURN arr;
+END
+
+
+ALGORITHM Insertion_Sort
+VAR
+    arr1,arr2 : ARRAY_OF INTEGER[5];
+    len=5
+BEGIN
+
+    FOR i FROM 0 TO 5 STEP 1  DO 
+        Write("enter v1");
+            Read(v1[i]);
+    END_FOR
+
+    arr2:=Ins_Sort(arr1,len);
+
+    FOR i FROM 0 TO 5 STEP 1  DO 
+        Write(arr2[i]);
+    END_FOR
+END
